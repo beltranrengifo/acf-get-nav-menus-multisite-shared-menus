@@ -162,7 +162,7 @@ if (!class_exists('nav_acf_field_get_nav')) :
                 <select name="<?php echo esc_attr($field['name']) ?>">
                     <option value="0"><?php printf('&mdash; %s &mdash;', esc_html__('Select a Menu')); ?></option>
                     <?php if ($is_multisite && !$is_main_site) { ?>
-                    <option disabled>= Menús del site =</option>
+                    <option disabled><?php printf('&mdash; %s &mdash;', esc_html__('Current site menus')); ?></option>
                     <?php } ?>
                     <?php foreach ($nav_menus as $menu) { ?>
                         <?php $selected = $field['value'] == $menu->term_id;
@@ -173,7 +173,7 @@ if (!class_exists('nav_acf_field_get_nav')) :
                         </option>
                     <?php } ?>
                     <?php if ($is_multisite && !$is_main_site) { ?>
-                    <option disabled>= Menús del site principal =</option>
+                    <option disabled><?php printf('&mdash; %s &mdash;', esc_html__('Main site menus')); ?></option>
                     <?php foreach ($main_menus as $menu) { ?>
                         <?php $selected = $field['value'] == $menu->term_id;
                         print_r($selected);
