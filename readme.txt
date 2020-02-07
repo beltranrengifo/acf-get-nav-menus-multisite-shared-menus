@@ -18,9 +18,12 @@ Loops wordpress navigation menus
 With Acf get menus you can easily get Wordpress navigation menus by choosing "Menus" in ACF when creating a new field.
 Then you will get all of your created Wordpress menus as an object that your can do whatever you like with.
 
-This is a mod over the original plugin. This mod shows the main site menus in the child sites ACF fields, so you easily can select parent site's menus:
+This is a mod over the original plugin:
 https://wordpress.org/plugins/acf-get-nav-menus/
 https://plugins.svn.wordpress.org/acf-get-nav-menus/
+
+This mod shows the main site menus in the child sites ACF fields, so you easily can select parent site's menus:
+https://github.com/beltranrengifo/acf-get-nav-menus-multisite-shared-menus
 
 Simple like that
 
