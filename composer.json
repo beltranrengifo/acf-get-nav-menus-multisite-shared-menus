@@ -1,0 +1,7 @@
+{
+	"name": "bechwebbkonsult/acf-get-menus",
+	"type": "wordpress-plugin",
+	"require": {
+		"composer/installers": "^1.4"
+	}
+}
