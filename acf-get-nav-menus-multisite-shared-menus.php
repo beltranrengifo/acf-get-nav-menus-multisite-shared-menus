@@ -3,7 +3,7 @@
 Plugin Name: Advanced Custom Fields: Get nav menus - multisite shared menus
 Plugin URI: https://github.com/beltranrengifo/acf-get-nav-menus-multisite-shared-menus
 Description: Get wordpress nav menus and share the main site menus with the child sites.
-Version: 1.0
+Version: 1.0.1
 Author: Beltrán Rengifo - Daniel Glans - Bech Webbkonsult AB
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
