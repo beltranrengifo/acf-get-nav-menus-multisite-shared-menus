@@ -149,13 +149,14 @@ if (!class_exists('nav_acf_field_get_nav')) :
             */
             $is_multisite = is_multisite();
             $is_main_site = is_main_site();
+            $current_site = get_current_blog_id();
+            $current_site_details = get_blog_details( array( 'blog_id' => $current_site ) );
+            $site_path = $current_site_details->path;
             if ($is_multisite && !$is_main_site) {
-                $current_blog = get_current_blog_id();
                 switch_to_blog(get_network()->site_id);
                 $main_menus = wp_get_nav_menus();
-                switch_to_blog($current_blog);
+                switch_to_blog($current_site);
             }
-
 ?>
 
             <div>
@@ -164,21 +165,31 @@ if (!class_exists('nav_acf_field_get_nav')) :
                     <?php if ($is_multisite && !$is_main_site) { ?>
                     <option disabled><?php printf('&mdash; %s &mdash;', esc_html__('Current site menus')); ?></option>
                     <?php } ?>
-                    <?php foreach ($nav_menus as $menu) { ?>
-                        <?php $selected = $field['value'] == $menu->term_id;
+                    <?php foreach ($nav_menus as $menu) {
+
+                        $value_array = [
+                            'menu_id' => $menu->term_id,
+                            'site_path' => $site_path
+                        ];
+
+                        $selected = $field['value'] == json_encode($value_array);
                         print_r($selected);
-                        ?>
-                        <option <?php if ($selected) echo 'selected'; ?> <?php // selected($selected); ?> value="<?php echo $menu->term_id; ?>">
+                    ?>
+                        <option <?php if ($selected) echo 'selected'; ?> value='<?php echo json_encode($value_array); ?>'>
                             <?php echo wp_html_excerpt($menu->name, 40, '&hellip;'); ?>
                         </option>
                     <?php } ?>
                     <?php if ($is_multisite && !$is_main_site) { ?>
                     <option disabled><?php printf('&mdash; %s &mdash;', esc_html__('Main site menus')); ?></option>
-                    <?php foreach ($main_menus as $menu) { ?>
-                        <?php $selected = $field['value'] == $menu->term_id;
+                    <?php foreach ($main_menus as $menu) {
+                        $value_array = [
+                            'menu_id' => $menu->term_id,
+                            'main_site_menu' => true
+                        ];
+                        $selected = $field['value'] == json_encode($value_array);
                         print_r($selected);
                         ?>
-                        <option <?php if ($selected) echo 'selected'; ?> <?php // selected($selected); ?> value="<?php echo $menu->term_id; ?>">
+                        <option <?php if ($selected) echo 'selected'; ?> value='<?php echo json_encode($value_array); ?>'>
                             <?php echo wp_html_excerpt($menu->name, 40, '&hellip;'); ?>
                         </option>
                     <?php }
