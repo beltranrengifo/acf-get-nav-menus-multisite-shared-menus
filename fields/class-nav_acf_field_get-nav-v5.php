@@ -592,7 +592,6 @@ if (!class_exists('nav_acf_field_get_nav')) :
         */
     }
 
-
 // initialize
 new nav_acf_field_get_nav($this->settings);
 
