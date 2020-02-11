@@ -4,7 +4,7 @@
 	"version": "1.0.1",
 	"description": "Get wordpress nav menus and share the main site menus with the child sites.",
 	"keywords": ["wordpress", "wp", "rest-api", "acf", "wp-api", "json", "wordpres-plugin", "fields", "wp menus", "nav menus"],
-	"license": "GPLv2.0+",
+	"license": "GPL-2.0-or-later",
 	"homepage": "https://github.com/beltranrengifo/acf-get-nav-menus-multisite-shared-menus",
 	"require": {
 		"php": ">=5.0",
