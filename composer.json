@@ -1,7 +1,7 @@
 {
 	"name": "beltranrengifo/acf-get-nav-menus-multisite-shared-menus",
 	"type": "wordpress-plugin",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Get wordpress nav menus and share the main site menus with the child sites.",
 	"keywords": ["wordpress", "wp", "rest-api", "acf", "wp-api", "json", "wordpres-plugin", "fields", "wp menus", "nav menus"],
 	"license": "GPL-2.0-or-later",
